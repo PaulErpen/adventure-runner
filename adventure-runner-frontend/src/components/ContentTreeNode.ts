@@ -1,4 +1,4 @@
-interface ContentTreeNode {
+export interface ContentTreeNode {
     name: string;
     path: string;
     children: ContentTreeNode[];

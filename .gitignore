@@ -4,6 +4,7 @@
 adventure-runner-backend/dist
 
 # Logs
+adventure-runner-frontend/dist
 adventure-runner-frontend/logs
 adventure-runner-frontend/*.log
 adventure-runner-frontend/npm-debug.log*
@@ -17,8 +18,8 @@ adventure-runner-frontend/dist-ssr
 adventure-runner-frontend/coverage
 adventure-runner-frontend/*.local
 
-adventure-runner-frontend//cypress/videos/
-adventure-runner-frontend//cypress/screenshots/
+adventure-runner-frontend/cypress/videos/
+adventure-runner-frontend/cypress/screenshots/
 
 # Editor directories and files
 adventure-runner-frontend/.vscode/*

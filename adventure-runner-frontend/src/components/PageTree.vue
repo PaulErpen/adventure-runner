@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import type { ContentTreeNode } from './ContentTreeNode';
 import TreeNode from './TreeNode.vue'
 
 const pageTree = ref({} as ContentTreeNode)

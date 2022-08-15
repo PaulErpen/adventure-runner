@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { ContentTreeNode } from './ContentTreeNode';
+
 const props = defineProps({
     name: String,
     isPage: Boolean,
