@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import type { ContentTreeNode } from './ContentTreeNode';
-import TreeNode from './TreeNode.vue'
+import TreeNode from './TreeNode.vue';
 
 const pageTree = ref({} as ContentTreeNode)
 
-const fetchContent = async () => {
-    const content = await (await fetch("/api/content")).json();
+const fetchTree = async () => {
+    const content = await (await fetch("/api/tree")).json();
     pageTree.value = content as ContentTreeNode;
 }
 
 onMounted(() => {
-    fetchContent();
+    fetchTree();
 })
 </script>
 

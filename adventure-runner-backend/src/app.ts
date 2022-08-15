@@ -1,16 +1,23 @@
 import express from "express";
 import fsPromises from "fs.promises";
 import fs from "fs";
+import { marked } from 'marked';
+
 const app = express();
 const port = 3000;
 
-app.get("/api/content", async (req, res, next) => {
+app.get("/api/tree", async (req, res, next) => {
     try {
         res.send(await readFileTree(`${__dirname}/../../content`));
     } catch (error) {
         console.error(error);
         next(error);
     }
+});
+
+app.get("/api/content/*", async (req, res, next) => {
+    const fileContent = await fsPromises.readFile(`${__dirname}/../../content/${pathFromContent(decodeURI(req.url))}`);
+    res.send(marked.parse(fileContent.toString()));
 });
 
 interface ContentTreeNode {

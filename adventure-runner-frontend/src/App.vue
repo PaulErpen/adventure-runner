@@ -1,5 +1,11 @@
 <script setup lang="ts">
-import PageTree from "./components/PageTree.vue";
+import { useRouteStore } from "./stores/route";
+
+const route = useRouteStore();
+
+const getCurrentView = () => {
+  return route.route;
+}
 </script>
 
 <template>
@@ -8,10 +14,9 @@ import PageTree from "./components/PageTree.vue";
   </header>
 
   <main>
-    <PageTree/>
+    <component :is="getCurrentView()"/>
   </main>
 </template>
 
 <style scoped>
-
 </style>

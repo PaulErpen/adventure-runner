@@ -18,6 +18,7 @@
     "express": "^4.18.1",
     "fp-ts": "^2.12.2",
     "fs": "^0.0.1-security",
-    "fs.promises": "^0.1.2"
+    "fs.promises": "^0.1.2",
+    "marked": "^4.0.18"
   }
 }
