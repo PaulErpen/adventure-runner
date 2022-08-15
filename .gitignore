@@ -1,0 +1,31 @@
+.vscode
+**/node_modules
+**/package-lock.json
+adventure-runner-backend/dist
+
+# Logs
+adventure-runner-frontend/logs
+adventure-runner-frontend/*.log
+adventure-runner-frontend/npm-debug.log*
+adventure-runner-frontend/yarn-debug.log*
+adventure-runner-frontend/yarn-error.log*
+adventure-runner-frontend/pnpm-debug.log*
+adventure-runner-frontend/lerna-debug.log*
+
+adventure-runner-frontend/.DS_Store
+adventure-runner-frontend/dist-ssr
+adventure-runner-frontend/coverage
+adventure-runner-frontend/*.local
+
+adventure-runner-frontend//cypress/videos/
+adventure-runner-frontend//cypress/screenshots/
+
+# Editor directories and files
+adventure-runner-frontend/.vscode/*
+adventure-runner-frontend/!.vscode/extensions.json
+adventure-runner-frontend/.idea
+adventure-runner-frontend/*.suo
+adventure-runner-frontend/*.ntvs*
+adventure-runner-frontend/*.njsproj
+adventure-runner-frontend/*.sln
+adventure-runner-frontend/*.sw?
