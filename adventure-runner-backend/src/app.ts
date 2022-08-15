@@ -29,7 +29,7 @@ const pathFromContent = path => {
 const readFileTree = async (currentDir: string): Promise<ContentTreeNode> => {
     const list = await fsPromises.readdir(currentDir);
     const fileTree = {
-        name: currentDir.slice(7,).split("/").slice(-1)[0],
+        name: currentDir.split("/").slice(-1)[0],
         path: pathFromContent(currentDir),
         children: [],
         isPage: false
