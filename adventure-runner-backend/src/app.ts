@@ -8,6 +8,11 @@ import hbs from "hbs";
 const app = express();
 const port = 3000;
 
+//TODO make decision here
+/*marked.setOptions({
+    sanitize: false
+});*/
+
 const crToXPMapping = {
     "0": 10,
     "1/8": 25,
@@ -55,27 +60,27 @@ const scoreToMofidierMapping = {
     "5": "-3",
     "6": "-2",
     "7": "-2",
-    "8": "-1", 
+    "8": "-1",
     "9": "-1",
-    "10": "+0", 
+    "10": "+0",
     "11": "+0",
-    "12": "+1", 
+    "12": "+1",
     "13": "+1",
-    "14": "+2", 
+    "14": "+2",
     "15": "+2",
-    "16": "+3", 
+    "16": "+3",
     "17": "+3",
-    "18": "+4", 
+    "18": "+4",
     "19": "+4",
-    "20": "+5", 
+    "20": "+5",
     "21": "+5",
-    "22": "+6", 
+    "22": "+6",
     "23": "+6",
-    "24": "+7", 
+    "24": "+7",
     "25": "+7",
-    "26": "+8", 
+    "26": "+8",
     "27": "+8",
-    "28": "+9", 
+    "28": "+9",
     "29": "+9",
     "30": "+10"
 }
@@ -124,24 +129,36 @@ app.get("/api/content/*", async (req, res, next) => {
     try {
         switch (req.url.split(".").slice(-1)[0]) {
             case "md":
-                const fileContent = await fsPromises.readFile(`${__dirname}/../../content/${pathFromContent(decodeURI(req.url))}`);
-                res.send(marked.parse(fileContent.toString()));
+                res.send(await renderMdPage(req.url));
                 break;
-            default: res.send(await renderCreature(pathFromContent(req.url))); break;
+            default: res.send(await renderCreature(pathFromContent(req.url), true)); break;
         }
-    } catch(error) {
+    } catch (error) {
         console.error(error);
         next(error);
     }
 });
 
-const renderCreature = async (path) => {
+const renderMdPage = async (url) => {
+    const fileContent = await fsPromises.readFile(`${__dirname}/../../content/${pathFromContent(decodeURI(url))}`);
+    const promises = [];
+    const regex = /\[comment\]: <> \(creature:(.+)\)/gm;
+    fileContent.toString().replace(regex, (match, creatureSpec) => {
+        const parts = creatureSpec.split(" ");
+        const promise = renderCreature("Creatures/" + parts[0], parts.length >= 2 && parts[1] === "wide");
+        promises.push(promise);
+    });
+    const data = await Promise.all(promises);
+    const preparsedMarkdown = fileContent.toString().replace(regex, () => data.shift());
+    return marked.parse(preparsedMarkdown);
+}
+
+const renderCreature = async (path, wide = false) => {
     const parsedFileContent = await getParsedFileContent(path);
     abilityScores.forEach(score => {
         parsedFileContent[score + "Mod"] = scoreToMofidierMapping[parsedFileContent[score].toString()]
     });
-    //TODO implement logic
-    parsedFileContent["wide"] = true;
+    parsedFileContent["wide"] = wide;
     return new Promise((resolve, reject) => {
         app.render("statblock.hbs", parsedFileContent, (err, html) => {
             if (err) {
