@@ -4,13 +4,16 @@
   "description": "",
   "main": "dist/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsc && node dist/app.js",
-    "build": "tsc"
+    "build": "tsc",
+    "test": "jest"
   },
   "author": "Paul Erpenstein",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^28.1.7",
+    "jest": "^28.1.3",
+    "ts-jest": "^28.0.8",
     "typescript": "^4.7.4"
   },
   "dependencies": {
@@ -19,6 +22,8 @@
     "fp-ts": "^2.12.2",
     "fs": "^0.0.1-security",
     "fs.promises": "^0.1.2",
-    "marked": "^4.0.18"
+    "hbs": "^4.2.0",
+    "marked": "^4.0.18",
+    "yaml": "^2.1.1"
   }
 }
