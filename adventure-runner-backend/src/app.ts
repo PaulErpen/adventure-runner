@@ -39,6 +39,47 @@ const crToXPMapping = {
     "24": 62000,
     "30": 155000
 }
+const abilityScores = [
+    "strength",
+    "dexterity",
+    "constitution",
+    "intelligence",
+    "wisdom",
+    "charisma"
+];
+const scoreToMofidierMapping = {
+    "1": "-5",
+    "2": "-4",
+    "3": "-4",
+    "4": "-3",
+    "5": "-3",
+    "6": "-2",
+    "7": "-2",
+    "8": "-1", 
+    "9": "-1",
+    "10": "+0", 
+    "11": "+0",
+    "12": "+1", 
+    "13": "+1",
+    "14": "+2", 
+    "15": "+2",
+    "16": "+3", 
+    "17": "+3",
+    "18": "+4", 
+    "19": "+4",
+    "20": "+5", 
+    "21": "+5",
+    "22": "+6", 
+    "23": "+6",
+    "24": "+7", 
+    "25": "+7",
+    "26": "+8", 
+    "27": "+8",
+    "28": "+9", 
+    "29": "+9",
+    "30": "+10"
+}
+
 app.set("views", __dirname + "/../views");
 
 hbs.registerHelper("ifEquals", function (arg1, arg2, options) {
@@ -80,17 +121,25 @@ app.get("/api/tree", async (req, res, next) => {
 });
 
 app.get("/api/content/*", async (req, res, next) => {
-    switch (req.url.split(".").slice(-1)[0]) {
-        case "md":
-            const fileContent = await fsPromises.readFile(`${__dirname}/../../content/${pathFromContent(decodeURI(req.url))}`);
-            res.send(marked.parse(fileContent.toString()));
-            break;
-        default: res.send(await renderCreature(pathFromContent(req.url))); break;
+    try {
+        switch (req.url.split(".").slice(-1)[0]) {
+            case "md":
+                const fileContent = await fsPromises.readFile(`${__dirname}/../../content/${pathFromContent(decodeURI(req.url))}`);
+                res.send(marked.parse(fileContent.toString()));
+                break;
+            default: res.send(await renderCreature(pathFromContent(req.url))); break;
+        }
+    } catch(error) {
+        console.error(error);
+        next(error);
     }
 });
 
 const renderCreature = async (path) => {
     const parsedFileContent = await getParsedFileContent(path);
+    abilityScores.forEach(score => {
+        parsedFileContent[score + "Mod"] = scoreToMofidierMapping[parsedFileContent[score].toString()]
+    });
     return new Promise((resolve, reject) => {
         app.render("statblock.hbs", parsedFileContent, (err, html) => {
             if (err) {

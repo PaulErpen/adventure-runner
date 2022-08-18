@@ -21,7 +21,7 @@ onMounted(() => {
 
 <style lang="scss">
 .stat-block-wrapper {
-    width: 33vw;
+    width: 450px;
     margin: 20px;
     font-family: 'Noto Sans', 'Myriad Pro', Calibri, Helvetica,
         Arial, sans-serif;
@@ -34,26 +34,25 @@ onMounted(() => {
         border-top: #7A200D 3px solid;
 
         .creature-heading {
-            font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
-
-            h1 {
-                color: #922610;
-                font-size: 23px;
-                line-height: 1.2em;
-                margin: 10px 0 0;
-                letter-spacing: 1px;
-                font-variant: small-caps;
-                font-weight: bold;
+                h1 {
+                    font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
+                    color: #922610;
+                    font-size: 23px;
+                    line-height: 1.2em;
+                    margin: 10px 0 0;
+                    letter-spacing: 1px;
+                    font-variant: small-caps;
+                    font-weight: bold;
+                }
+        
+                h2 {
+                    font-weight: normal;
+                    font-style: italic;
+                    font-size: 12px;
+                    line-height: 1.2em;
+                    margin: 0 0 10px;
+                }
             }
-
-            h2 {
-                font-weight: normal;
-                font-style: italic;
-                font-size: 12px;
-                line-height: 1.2em;
-                margin: 0 0 10px;
-            }
-        }
 
         .top-stats {
             margin: 5px 0 8px 0;
