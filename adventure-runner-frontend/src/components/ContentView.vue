@@ -169,4 +169,13 @@ onMounted(() => {
         }
     }
 }
+@media print {
+    .stat-block-wrapper {
+        margin-left: 0;
+
+        .stat-block {
+            box-shadow: unset;
+        }
+    }
+}
 </style>
