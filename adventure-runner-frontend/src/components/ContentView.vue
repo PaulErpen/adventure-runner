@@ -21,38 +21,52 @@ onMounted(() => {
 
 <style lang="scss">
 .stat-block-wrapper {
-    width: 450px;
+    width: 490px;
     margin: 20px;
     font-family: 'Noto Sans', 'Myriad Pro', Calibri, Helvetica,
         Arial, sans-serif;
 
     .stat-block {
         background: #FDF1DC;
-        padding: 5px 10px 20px;
         box-shadow: 0 0 1.5em #867453;
         margin-bottom: 15px;
         border-top: #7A200D 3px solid;
 
+        .col {
+            width: 450px;
+        }
+
+        .first-col {
+            padding: 5px 10px 0px;
+
+        }
+
+        .second-col {
+            padding: 5px 10px 20px;
+
+
+        }
+
         .creature-heading {
-                h1 {
-                    font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
-                    color: #922610;
-                    font-size: 23px;
-                    line-height: 1.2em;
-                    margin: 10px 0 0;
-                    letter-spacing: 1px;
-                    font-variant: small-caps;
-                    font-weight: bold;
-                }
-        
-                h2 {
-                    font-weight: normal;
-                    font-style: italic;
-                    font-size: 12px;
-                    line-height: 1.2em;
-                    margin: 0 0 10px;
-                }
+            h1 {
+                font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
+                color: #922610;
+                font-size: 23px;
+                line-height: 1.2em;
+                margin: 10px 0 0;
+                letter-spacing: 1px;
+                font-variant: small-caps;
+                font-weight: bold;
             }
+
+            h2 {
+                font-weight: normal;
+                font-style: italic;
+                font-size: 12px;
+                line-height: 1.2em;
+                margin: 0 0 10px;
+            }
+        }
 
         .top-stats {
             margin: 5px 0 8px 0;
@@ -120,7 +134,7 @@ onMounted(() => {
         h3.actions {
             border-bottom: 1px solid #7A200D;
             color: #7A200D;
-            font-size: 21px;
+            font-size: 23px;
             font-variant: small-caps;
             font-weight: normal;
             letter-spacing: 1px;
@@ -135,6 +149,22 @@ onMounted(() => {
 
             &.top {
                 margin-top: 6px;
+            }
+        }
+    }
+
+    &.wide {
+        width: 940px;
+
+        .stat-block {
+            overflow: auto;
+
+            .col {
+                float: left;
+            }
+
+            .first-col {
+                padding-bottom: 20px;
             }
         }
     }

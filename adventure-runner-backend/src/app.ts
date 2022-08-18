@@ -140,6 +140,8 @@ const renderCreature = async (path) => {
     abilityScores.forEach(score => {
         parsedFileContent[score + "Mod"] = scoreToMofidierMapping[parsedFileContent[score].toString()]
     });
+    //TODO implement logic
+    parsedFileContent["wide"] = true;
     return new Promise((resolve, reject) => {
         app.render("statblock.hbs", parsedFileContent, (err, html) => {
             if (err) {
