@@ -141,16 +141,16 @@ app.get("/api/content/*", async (req, res, next) => {
 
 const renderMdPage = async (url) => {
     const fileContent = await fsPromises.readFile(`${__dirname}/../../content/${pathFromContent(decodeURI(url))}`);
+    const html = marked.parse(fileContent.toString());
     const promises = [];
-    const regex = /\[comment\]: <> \(creature:(.+)\)/gm;
-    fileContent.toString().replace(regex, (match, creatureSpec) => {
+    const regex = /<!--creature:(.+)-->/gm;
+    html.replace(regex, (match, creatureSpec) => {
         const parts = creatureSpec.split(" ");
         const promise = renderCreature("Creatures/" + parts[0], parts.length >= 2 && parts[1] === "wide");
         promises.push(promise);
     });
     const data = await Promise.all(promises);
-    const preparsedMarkdown = fileContent.toString().replace(regex, () => data.shift());
-    return marked.parse(preparsedMarkdown);
+    return html.replace(regex, () => data.shift());
 }
 
 const renderCreature = async (path, wide = false) => {
