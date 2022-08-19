@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useRouteStore } from '@/stores/route';
 import { ref, onMounted } from 'vue'
+import InitiativeTracker from './InitiativeTracker.vue'
 
 const content = ref("");
 
@@ -16,18 +17,35 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="content" v-html="content" />
+    <div class="content-view">
+        <div class="side">
+            <InitiativeTracker/>
+        </div>
+        <div class="content" v-html="content" />
+    </div>
 </template>
 
 <style lang="scss">
-.content {
-    padding: 20px;
+.content-view {
+    overflow: auto;
 
-    .containerdivNewLine {
-        clear: both;
+    .side {
+        padding: 20px;
         float: left;
-        display: block;
-        position: relative;
+        width: 310px;
+    }
+
+    .content {
+        float: left;
+        padding: 20px;
+        width: calc( 100vw - 405px );
+
+        .containerdivNewLine {
+            clear: both;
+            float: left;
+            display: block;
+            position: relative;
+        }
     }
 }
 
