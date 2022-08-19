@@ -1,9 +1,12 @@
-# Hello There
+# Ein schönes Dokument
 
 Lorem ipsum dolor sit amet.
+Lorem ipsum dolor sit amet.
+Lorem ipsum dolor sit amet.
+Lorem ipsum dolor sit amet.
+Lorem ipsum dolor sit amet.
 
-<!--creature:blood_wight.yaml float showDescription-->
-<!--creature:blood_wight.yaml float-->
+<!--creature:mage.yaml float-->
 <div style="clear:both"></div>
 
 Lorem ipsum dolor sit amet.

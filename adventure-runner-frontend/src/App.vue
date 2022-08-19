@@ -25,6 +25,7 @@ header {
   display: flex;
   align-items: center;
   box-shadow: 0px 0px 6px #9d9d9d;
+  position: relative;
 }
 
 header .logo {

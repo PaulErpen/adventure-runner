@@ -1,35 +1,40 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
-import Draggable from "vue3-draggable";
+import draggable from 'vuedraggable'
 
 const newCreatureName = ref("");
 
-const trackedCreatures = ref([
-    {
-        name: "Blalala",
-        id: 1,
-        initiative: 0,
-        hp: 20
-    },
-    {
-        name: "12312",
-        id: 2,
-        initiative: 0,
-        hp: 20
-    },
-    {
-        name: "BlHelloHelloalala",
-        id: 3,
-        initiative: 0,
-        hp: 20
+interface TrackedCreature {
+    name: string,
+    id: number,
+    initiative: number,
+    hp: number
+}
+
+const trackedCreaturesLocalStorageKey = "adv_runner_init_tracker_creatures";
+
+const loadTrackedCreaturesFromLocalStorage = (): Array<TrackedCreature> => {
+    const loadedCreatures = window.localStorage.getItem(trackedCreaturesLocalStorageKey);
+    if (loadedCreatures) {
+        return JSON.parse(loadedCreatures);
     }
-]);
+    return Array<TrackedCreature>();
+}
+
+const trackedCreatures = ref(loadTrackedCreaturesFromLocalStorage());
+
+const saveTrackedCreaturesToLocalStorage = () => {
+    window.localStorage.setItem(trackedCreaturesLocalStorageKey, JSON.stringify(trackedCreatures.value));
+    setTimeout(() => saveTrackedCreaturesToLocalStorage(), 5000);
+}
+
+setTimeout(() => saveTrackedCreaturesToLocalStorage(), 5000);
 
 const addCreature = () => {
     trackedCreatures.value.push({
         name: newCreatureName.value,
         id: trackedCreatures.value.length,
-        initiative: Math.max(...trackedCreatures.value.map(c => c.initiative)),
+        initiative: Math.min(...trackedCreatures.value.map(c => c.initiative)),
         hp: 0
     });
 
@@ -44,23 +49,23 @@ const deleteCreature = (id: number) => {
 <template>
     <div class="initiative-tracker">
         <h1>Initiative Tracker</h1>
-        <draggable v-model="trackedCreatures">
-            <template v-slot:item="{ item }">
+        <draggable v-model="trackedCreatures" item-key="id">
+            <template #item="{ element }">
                 <div class="creature-item">
-                    <input class="initiative-input" type="text" v-model="item.initiative" />
+                    <input class="initiative-input" type="text" v-model="element.initiative" />
                     &nbsp;
-                    {{ item.name }}
+                    {{ element.name }}
 
-                    <span class="delete" @click="deleteCreature(item.id)">X</span>
+                    <span class="delete" @click="deleteCreature(element.id)">X</span>
                     <span class="hp-display">
-                        HP: <input class="hp-input" type="text" v-model="item.hp" />
+                        HP: <input class="hp-input" type="text" v-model="element.hp" />
                     </span>
 
                 </div>
             </template>
         </draggable>
         <span class="add-creature-holder">
-            <input type="text" v-model="newCreatureName"/>
+            <input type="text" v-model="newCreatureName" />
             <button @click="addCreature()">Add creature</button>
         </span>
     </div>
@@ -93,6 +98,7 @@ const deleteCreature = (id: number) => {
             width: 30px;
         }
     }
+
     .add-creature-holder {
         button {
             float: right;

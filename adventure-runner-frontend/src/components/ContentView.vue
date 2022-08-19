@@ -19,7 +19,7 @@ onMounted(() => {
 <template>
     <div class="content-view">
         <div class="side">
-            <InitiativeTracker/>
+            <InitiativeTracker />
         </div>
         <div class="content" v-html="content" />
     </div>
@@ -38,7 +38,9 @@ onMounted(() => {
     .content {
         float: left;
         padding: 20px;
-        width: calc( 100vw - 405px );
+        width: calc(100vw - 390px);
+        overflow: auto;
+        max-height: calc(100vh - 136px);
 
         .containerdivNewLine {
             clear: both;
@@ -57,7 +59,7 @@ onMounted(() => {
 
     .stat-block {
         background: #FDF1DC;
-        box-shadow: 0 0 1.5em #867453;
+        box-shadow: 0 0 0.7em #867453;
         margin-bottom: 15px;
         border-top: #7A200D 3px solid;
 
