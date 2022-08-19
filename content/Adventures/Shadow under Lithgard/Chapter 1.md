@@ -2,4 +2,8 @@
 
 Lorem ipsum dolor sit amet.
 
-<!--creature:blood_wight.yaml wide-->
+<!--creature:blood_wight.yaml float showDescription-->
+<!--creature:blood_wight.yaml float-->
+<div style="clear:both"></div>
+
+Lorem ipsum dolor sit amet.

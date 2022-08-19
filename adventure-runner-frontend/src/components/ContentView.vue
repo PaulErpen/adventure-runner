@@ -20,9 +20,20 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
+.content {
+    padding: 20px;
+
+    .containerdivNewLine {
+        clear: both;
+        float: left;
+        display: block;
+        position: relative;
+    }
+}
+
 .stat-block-wrapper {
     width: 490px;
-    margin: 20px;
+    margin: 0 20px 20px 0px;
     font-family: 'Noto Sans', 'Myriad Pro', Calibri, Helvetica,
         Arial, sans-serif;
 
@@ -168,11 +179,14 @@ onMounted(() => {
             }
         }
     }
+
+    &.float {
+        float: left;
+    }
 }
+
 @media print {
     .stat-block-wrapper {
-        margin-left: 0;
-
         .stat-block {
             box-shadow: unset;
         }

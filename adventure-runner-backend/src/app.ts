@@ -146,19 +146,25 @@ const renderMdPage = async (url) => {
     const regex = /<!--creature:(.+)-->/gm;
     html.replace(regex, (match, creatureSpec) => {
         const parts = creatureSpec.split(" ");
-        const promise = renderCreature("Creatures/" + parts[0], parts.length >= 2 && parts[1] === "wide");
+        const promise = renderCreature(
+            "Creatures/" + parts[0],
+            parts.includes("wide"),
+            parts.includes("showDescription"),
+            parts.includes("float"));
         promises.push(promise);
     });
     const data = await Promise.all(promises);
     return html.replace(regex, () => data.shift());
 }
 
-const renderCreature = async (path, wide = false) => {
+const renderCreature = async (path, wide = false, showDescription = true, float = false) => {
     const parsedFileContent = await getParsedFileContent(path);
     abilityScores.forEach(score => {
         parsedFileContent[score + "Mod"] = scoreToMofidierMapping[parsedFileContent[score].toString()]
     });
     parsedFileContent["wide"] = wide;
+    parsedFileContent["showDescription"] = showDescription;
+    parsedFileContent["float"] = float;
     return new Promise((resolve, reject) => {
         app.render("statblock.hbs", parsedFileContent, (err, html) => {
             if (err) {

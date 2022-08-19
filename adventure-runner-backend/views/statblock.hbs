@@ -1,4 +1,4 @@
-<div class="stat-block-wrapper {{#if this.wide}}wide{{/if}}">
+<div class="stat-block-wrapper {{#if this.wide}}wide{{/if}} {{#if this.float}}float{{/if}}">
   <div class="stat-block">
     <div class="first-col col">
       <div class="creature-heading">
@@ -196,8 +196,10 @@
     </div>
   </div>
   {{#if description}}
+  {{#if showDescription}}
   <div class="description">
     {{breaklines description}}
   </div>
+  {{/if}}
   {{/if}}
 </div>
