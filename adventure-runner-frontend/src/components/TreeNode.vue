@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ContentTreeNode } from './ContentTreeNode';
+import type { ContentTreeNode } from '../model/ContentTreeNode';
 import { useRouteStore } from '@/stores/route';
 
 const route = useRouteStore();

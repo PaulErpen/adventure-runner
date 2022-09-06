@@ -1,62 +1,30 @@
 <script lang="ts" setup>
+import type { TrackedCreature } from '@/model/TrackedCreature';
 import { ref } from 'vue';
-import draggable from 'vuedraggable'
+import draggable from 'vuedraggable';
+import { useTrackedCreaturesStore } from '../stores/trackedCreatures';
 
 const newCreatureName = ref("");
 
-interface TrackedCreature {
-    name: string,
-    id: number,
-    initiative: number,
-    hp: number
-}
-
-const trackedCreaturesLocalStorageKey = "adv_runner_init_tracker_creatures";
-
-const loadTrackedCreaturesFromLocalStorage = (): Array<TrackedCreature> => {
-    const loadedCreatures = window.localStorage.getItem(trackedCreaturesLocalStorageKey);
-    if (loadedCreatures) {
-        return JSON.parse(loadedCreatures);
-    }
-    return Array<TrackedCreature>();
-}
-
-const trackedCreatures = ref(loadTrackedCreaturesFromLocalStorage());
-
-const saveTrackedCreaturesToLocalStorage = () => {
-    window.localStorage.setItem(trackedCreaturesLocalStorageKey, JSON.stringify(trackedCreatures.value));
-    setTimeout(() => saveTrackedCreaturesToLocalStorage(), 5000);
-}
-
-setTimeout(() => saveTrackedCreaturesToLocalStorage(), 5000);
+const trackedCreatures = useTrackedCreaturesStore();
 
 const addCreature = () => {
-    trackedCreatures.value.push({
-        name: newCreatureName.value,
-        id: trackedCreatures.value.length,
-        initiative: Math.min(...trackedCreatures.value.map(c => c.initiative)),
-        hp: 0
-    });
-
+    trackedCreatures.addCreature(newCreatureName.value);
     newCreatureName.value = "";
-}
-
-const deleteCreature = (id: number) => {
-    trackedCreatures.value = [...trackedCreatures.value.filter(c => c.id !== id)];
 }
 </script>
 
 <template>
     <div class="initiative-tracker">
         <h1>Initiative Tracker</h1>
-        <draggable v-model="trackedCreatures" item-key="id">
+        <draggable v-model="trackedCreatures.trackedCreaturesArray" item-key="id">
             <template #item="{ element }">
                 <div class="creature-item">
                     <input class="initiative-input" type="text" v-model="element.initiative" />
                     &nbsp;
                     {{ element.name }}
 
-                    <span class="delete" @click="deleteCreature(element.id)">X</span>
+                    <span class="delete" @click="trackedCreatures.deleteCreature(element.id)">X</span>
                     <span class="hp-display">
                         HP: <input class="hp-input" type="text" v-model="element.hp" />
                     </span>
