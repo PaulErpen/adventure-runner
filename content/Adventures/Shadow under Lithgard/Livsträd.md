@@ -24,6 +24,11 @@
 <!--creature:merfolk.json float-->
 <div style="clear:both"></div>
 
+* If the players want to do somethign weird in twon here are more elves
+
+<!--creature:elvish-veteran-archer.json wide-->
+<!--creature:enchanter.json wide-->
+
 ### The sun temple
 
 * district in the honor of the moon goddess Alcera
@@ -40,9 +45,21 @@
 * A jewelers shop run by an old elfish woman called Zelora Uldwar
 * The queens domain &rarr; has deathsworn elfes as guards, uses the deathsworn elf statblock aswell for now
 
-<!--creature:deathsworn-elf.json-->
+<!--creature:deathsworn-elf.json wide-->
 
 ### Seven twigs
 
 * Place where the most elves live
 * Also some half-elves, humans and halflings
+
+## The siege of Livsträd
+
+* is being sieged by the drow and their kobold allies
+* two siege camps protected by magical devices that shield from arrows
+
+<img src="/Livstrad.png" width=900 height=900 />
+
+* each camp is guarded by 6 drow and 6 kobolds (too hard for players on their own)
+
+<!--creature:kobold.json float-->
+<!--creature:drow.json float-->

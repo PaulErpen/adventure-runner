@@ -26,6 +26,10 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
+img {
+    max-width: 100%;
+}
+
 .content-view {
     overflow: auto;
 
