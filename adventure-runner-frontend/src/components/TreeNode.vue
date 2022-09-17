@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
 import type { ContentTreeNode } from '../model/ContentTreeNode';
-import { useRouteStore } from '@/stores/route';
 
-const route = useRouteStore();
+const router = useRouter();
 
 const props = defineProps({
     name: String,
@@ -16,7 +16,7 @@ const hasChildren = () => {
 }
 
 const viewContent = () => {
-    route.viewContent(props.path)
+    router.push(`/content/${props.path}`);
 }
 </script>
 

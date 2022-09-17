@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import { useRouteStore } from '@/stores/route';
 import { ref, onMounted } from 'vue'
+import { useRoute } from 'vue-router';
 import InitiativeTracker from './InitiativeTracker.vue'
+
+const route = useRoute();
 
 const content = ref("");
 
-const route = useRouteStore();
-
 const fetchContent = async () => {
-    content.value = await (await fetch("/api/content/" + route.contentPath)).text();
+    const contentPath = route.params.path?.length ? (route.params.path as string[]).join("/") : route.params.path;
+    content.value = await (await fetch("/api/content/" + contentPath)).text();
 }
 
 onMounted(() => {

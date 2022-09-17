@@ -1,21 +1,17 @@
-<script setup lang="ts">
-import { useRouteStore } from "./stores/route";
+<script lang="ts" setup>
 
-const route = useRouteStore();
-
-const getCurrentView = () => {
-  return route.route;
-}
 </script>
 
 <template>
-  <header @click="route.home()">
-    <img class="logo" src="./assets/android-chrome-512x512.png" />
-    <h1 class="site-title">Adventure runner</h1>
-  </header>
+  <router-link to="/">
+    <header>
+      <img class="logo" src="./assets/android-chrome-512x512.png" />
+      <h1 class="site-title">Adventure runner</h1>
+    </header>
+  </router-link>
 
   <main>
-    <component :is="getCurrentView()" />
+    <router-view></router-view>
   </main>
 </template>
 
