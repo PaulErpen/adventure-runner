@@ -4,6 +4,7 @@ import fs from "fs";
 import { marked } from 'marked';
 import yaml from "yaml";
 import hbs from "hbs";
+import fetch from "node-fetch";
 
 const app = express();
 const port = 3000;
@@ -114,6 +115,7 @@ hbs.registerHelper("breaklines", function (text) {
     text = text.replace(/(\r\n|\n|\r)/gm, "<br>");
     return new hbs.SafeString(text);
 });
+hbs.registerPartial("spell", hbs.compile(fs.readFileSync(`${__dirname}/../views/spell.hbs`).toString()));
 app.set('view engine', 'hbs');
 
 app.get("/api/tree", async (req, res, next) => {
@@ -157,6 +159,11 @@ const renderMdPage = async (url) => {
     return html.replace(regex, () => data.shift());
 }
 
+const resolveSpells = async (spell_list: string[]) => {
+    const spells = await Promise.all(spell_list.map(spell_url => fetch(spell_url).then(res => res.json())));
+    return spells;
+}
+
 const renderCreature = async (path, wide = false, showDescription = true, float = false) => {
     const parsedFileContent = await getParsedFileContent(path);
     abilityScores.forEach(score => {
@@ -165,6 +172,7 @@ const renderCreature = async (path, wide = false, showDescription = true, float 
     parsedFileContent["wide"] = wide;
     parsedFileContent["showDescription"] = showDescription;
     parsedFileContent["float"] = float;
+    parsedFileContent["spells"] = await resolveSpells(parsedFileContent["spell_list"]);
     return new Promise((resolve, reject) => {
         app.render("statblock.hbs", parsedFileContent, (err, html) => {
             if (err) {

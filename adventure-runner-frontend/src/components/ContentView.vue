@@ -12,17 +12,42 @@ const fetchContent = async () => {
     content.value = await (await fetch("/api/content/" + contentPath)).text();
 }
 
+interface SpellDescData {
+    name: string;
+    desc: string;
+    offsetLeft: number;
+    offsetTop: number;
+}
+
+const spellRef = ref<SpellDescData>();
+
+const handleClickedContent = (event: any) => {
+    if (event.target?.classList?.contains("spell-clickable")) {
+        spellRef.value = {
+            name: event.target.dataset.name,
+            desc: event.target.dataset.spellDesc,
+            offsetLeft: event.target.offsetLeft,
+            offsetTop: event.target.offsetTop + event.target.offsetHeight
+        };
+    } else {
+        spellRef.value = undefined;
+    }
+}
+
 onMounted(() => {
     fetchContent();
 });
 </script>
 
 <template>
-    <div class="content-view">
+    <div class="content-view" @click="handleClickedContent">
         <div class="side">
             <InitiativeTracker />
         </div>
         <div class="content" v-html="content" />
+        <div v-if="spellRef" class="spell-desc-dialog" :style="{ top: spellRef.offsetTop + 'px', left: spellRef.offsetLeft + 'px' }">
+            {{spellRef.desc}}
+        </div>
     </div>
 </template>
 
@@ -33,6 +58,10 @@ img {
 
 .content-view {
     overflow: auto;
+
+    .spell-desc-dialog {
+        position: absolute;
+    }
 
     .side {
         padding: 20px;
@@ -67,6 +96,7 @@ img {
         box-shadow: 0 0 0.7em #867453;
         margin-bottom: 15px;
         border-top: #7A200D 3px solid;
+        overflow: visible;
 
         .col {
             width: 450px;
@@ -155,7 +185,8 @@ img {
             padding: 10px 2px 0;
 
             h4,
-            p {
+            p,
+            .spell-clickable {
                 font-size: 13.5px;
                 line-height: 1.2em;
                 display: inline;
@@ -164,6 +195,10 @@ img {
 
             h4 {
                 font-style: italic;
+            }
+
+            .spell-clickable {
+                text-decoration: underline;
             }
         }
 

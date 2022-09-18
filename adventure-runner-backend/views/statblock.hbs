@@ -158,6 +158,16 @@
         <p>{{breaklines this.desc}}</p>
       </div>
       {{/each}}
+
+      <div class="property-block">
+        <h4>Spells</h4>
+        {{#each spells}}
+          <span class="spell-clickable" data-spell-desc="{{this.desc}}" data-name="{{this.name}}">
+            {{this.name}}
+          </span>&nbsp;
+        {{/each}}
+      </div>
+
     </div>
     <div class="second-col col">
       {{#if actions}}
