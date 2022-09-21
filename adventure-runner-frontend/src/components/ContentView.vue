@@ -45,8 +45,10 @@ onMounted(() => {
             <InitiativeTracker />
         </div>
         <div class="content" v-html="content" />
-        <div v-if="spellRef" class="spell-desc-dialog" :style="{ top: spellRef.offsetTop + 'px', left: spellRef.offsetLeft + 'px' }">
-            {{spellRef.desc}}
+        <div v-if="spellRef" class="spell-desc-dialog"
+            :style="{ top: spellRef.offsetTop + 'px', left: spellRef.offsetLeft + 'px' }">
+            <h3>{{spellRef.name}}</h3>
+            <p>{{spellRef.desc}}</p>
         </div>
     </div>
 </template>
@@ -61,6 +63,19 @@ img {
 
     .spell-desc-dialog {
         position: absolute;
+        transform: translate(-50%, 3px);
+        background: white;
+        padding: 15px;
+        border: solid 2px #7A200D;
+        max-width: 40vw;
+
+        h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        p {
+            margin: 0;
+        }
     }
 
     .side {
