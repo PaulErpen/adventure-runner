@@ -9,11 +9,6 @@ import fetch from "node-fetch";
 const app = express();
 const port = 3000;
 
-//TODO make decision here
-/*marked.setOptions({
-    sanitize: false
-});*/
-
 const crToXPMapping = {
     "0": 10,
     "1/8": 25,
@@ -85,6 +80,9 @@ const scoreToMofidierMapping = {
     "29": "+9",
     "30": "+10"
 }
+
+const spells_path = `${__dirname}/../../content/Spells/spells.json`;
+const spell_db = fs.existsSync(spells_path) ? JSON.parse(fs.readFileSync(spells_path).toString()) : {};
 
 app.set("views", __dirname + "/../views");
 
@@ -160,8 +158,14 @@ const renderMdPage = async (url) => {
 }
 
 const resolveSpells = async (spell_list: string[]) => {
-    const spells = await Promise.all(spell_list.map(spell_url => fetch(spell_url).then(res => res.json())));
-    return spells;
+    const slugs = spell_list
+        .map(spell => spell.split("/").at(-2));
+    const locally_resolveable_slugs = slugs
+        .filter(slug => slug in spell_db);
+    const locally_resolveable = locally_resolveable_slugs.map(slug => spell_db[slug]);
+    const remote_spell_urls = spell_list.filter(spell => !locally_resolveable_slugs.includes(spell.split("/").at(-2)));
+    const remote_spells = await Promise.all(remote_spell_urls.map(spell_url => fetch(spell_url).then(res => res.json())));
+    return [...locally_resolveable, ...remote_spells];
 }
 
 const renderCreature = async (path, wide = false, showDescription = true, float = false) => {
