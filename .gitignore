@@ -30,3 +30,5 @@ adventure-runner-frontend/*.ntvs*
 adventure-runner-frontend/*.njsproj
 adventure-runner-frontend/*.sln
 adventure-runner-frontend/*.sw?
+
+content/Spells/spells.json
