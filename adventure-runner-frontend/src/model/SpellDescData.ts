@@ -6,8 +6,6 @@ export interface SpellDescData {
     range: string;
     components: string;
     material: string;
-    verbal: string;
-    somatic: string;
     ritual: string;
     duration: string;
     concentration: string;

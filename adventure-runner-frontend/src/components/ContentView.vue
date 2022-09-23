@@ -31,7 +31,7 @@ onMounted(() => {
     <div class="content-view" @click="handleClickedContent">
         <div class="side">
             <InitiativeTracker />
-            <SelectedSpell :spell="spellRef"/>
+            <SelectedSpell :spell="spellRef" />
         </div>
         <div class="content" v-html="content" />
     </div>
@@ -195,15 +195,6 @@ img {
             padding: 0 0 10px;
             text-indent: 5px;
         }
-
-        .spacer {
-            height: 1px;
-            background-color: #7A200D;
-
-            &.top {
-                margin-top: 6px;
-            }
-        }
     }
 
     &.wide {
@@ -232,6 +223,15 @@ img {
         .stat-block {
             box-shadow: unset;
         }
+    }
+}
+
+.spacer {
+    height: 1px;
+    background-color: #7A200D;
+
+    &.top {
+        margin-top: 6px;
     }
 }
 </style>
