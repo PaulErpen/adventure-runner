@@ -162,7 +162,7 @@
       <div class="property-block">
         <h4>Spells</h4>
         {{#each spells}}
-          <span class="spell-clickable" data-spell-desc="{{this.desc}}" data-name="{{this.name}}">
+          <span class="spell-clickable" data-spell="{{jsonToString this}}">
             {{this.name}}
           </span>&nbsp;
         {{/each}}

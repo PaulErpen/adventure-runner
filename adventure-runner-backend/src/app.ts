@@ -113,7 +113,9 @@ hbs.registerHelper("breaklines", function (text) {
     text = text.replace(/(\r\n|\n|\r)/gm, "<br>");
     return new hbs.SafeString(text);
 });
-hbs.registerPartial("spell", hbs.compile(fs.readFileSync(`${__dirname}/../views/spell.hbs`).toString()));
+hbs.registerHelper("jsonToString", function (json) {
+    return JSON.stringify(json);
+});
 app.set('view engine', 'hbs');
 
 app.get("/api/tree", async (req, res, next) => {

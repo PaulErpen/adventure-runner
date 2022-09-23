@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import type { TrackedCreature } from '@/model/TrackedCreature';
 import { ref } from 'vue';
 import draggable from 'vuedraggable';
 import { useTrackedCreaturesStore } from '../stores/trackedCreatures';

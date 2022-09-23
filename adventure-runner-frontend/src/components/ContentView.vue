@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import type { SpellDescData } from '@/model/SpellDescData';
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router';
 import InitiativeTracker from './InitiativeTracker.vue'
+import SelectedSpell from './SelectedSpell.vue'
 
 const route = useRoute();
 
@@ -12,25 +14,11 @@ const fetchContent = async () => {
     content.value = await (await fetch("/api/content/" + contentPath)).text();
 }
 
-interface SpellDescData {
-    name: string;
-    desc: string;
-    offsetLeft: number;
-    offsetTop: number;
-}
-
 const spellRef = ref<SpellDescData>();
 
 const handleClickedContent = (event: any) => {
     if (event.target?.classList?.contains("spell-clickable")) {
-        spellRef.value = {
-            name: event.target.dataset.name,
-            desc: event.target.dataset.spellDesc,
-            offsetLeft: event.target.offsetLeft,
-            offsetTop: event.target.offsetTop + event.target.offsetHeight
-        };
-    } else {
-        spellRef.value = undefined;
+        spellRef.value = JSON.parse(event.target.dataset.spell);
     }
 }
 
@@ -43,13 +31,9 @@ onMounted(() => {
     <div class="content-view" @click="handleClickedContent">
         <div class="side">
             <InitiativeTracker />
+            <SelectedSpell :spell="spellRef"/>
         </div>
         <div class="content" v-html="content" />
-        <div v-if="spellRef" class="spell-desc-dialog"
-            :style="{ top: spellRef.offsetTop + 'px', left: spellRef.offsetLeft + 'px' }">
-            <h3>{{spellRef.name}}</h3>
-            <p>{{spellRef.desc}}</p>
-        </div>
     </div>
 </template>
 
@@ -60,23 +44,6 @@ img {
 
 .content-view {
     overflow: auto;
-
-    .spell-desc-dialog {
-        position: absolute;
-        transform: translate(-50%, 3px);
-        background: white;
-        padding: 15px;
-        border: solid 2px #7A200D;
-        max-width: 40vw;
-
-        h3 {
-            margin-top: 0;
-            margin-bottom: 15px;
-        }
-        p {
-            margin: 0;
-        }
-    }
 
     .side {
         padding: 20px;

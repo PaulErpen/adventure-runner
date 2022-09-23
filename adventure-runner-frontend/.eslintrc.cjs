@@ -18,4 +18,7 @@ module.exports = {
       extends: ["plugin:cypress/recommended"],
     },
   ],
+  env: {
+    "vue/setup-compiler-macros": true,
+  },
 };
