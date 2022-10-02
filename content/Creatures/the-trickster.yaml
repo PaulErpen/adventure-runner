@@ -1,0 +1,89 @@
+---
+slug: thr-trickster
+name: The Trickster
+size: Medium
+type: humanoid
+subtype: elf
+group:
+alignment: chaotic evil
+armor_class: 14
+armor_desc: mithril shirt
+hit_points: 44
+hit_dice: 3d8
+speed:
+  walk: 35
+strength: 9
+dexterity: 14
+constitution: 9
+intelligence: 13
+wisdom: 8
+charisma: 17
+strength_save:
+dexterity_save:
+constitution_save:
+intelligence_save:
+wisdom_save:
+charisma_save:
+perception: 2
+skills:
+  perception: 2
+  stealth: 4
+damage_vulnerabilities: ''
+damage_resistances: ''
+damage_immunities: ''
+condition_immunities: ''
+senses: darkvision 120 ft., passive Perception 12
+languages: Elvish, Undercommon
+challenge_rating: 2
+actions:
+- name: Shortsword
+  desc: 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2)
+    piercing damage.'
+  attack_bonus: 4
+  damage_dice: 1d6
+  damage_bonus: 2
+- name: Hand Crossbow
+  desc: 'Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 5 (1d6
+    + 2) piercing damage, and the target must succeed on a DC 13 Constitution saving
+    throw or be poisoned for 1 hour. If the saving throw fails by 5 or more, the target
+    is also unconscious while poisoned in this way. The target wakes up if it takes
+    damage or if another creature takes an action to shake it awake.'
+  attack_bonus: 4
+  damage_dice: 1d6
+  damage_bonus: 2
+reactions: ''
+legendary_desc: ''
+legendary_actions: ''
+special_abilities:
+- name: Fey Ancestry
+  desc: The drow has advantage on saving throws against being charmed, and magic can't
+    put the drow to sleep.
+- name: Innate Spellcasting
+  desc: |-
+    The drow's spellcasting ability is Charisma (spell save DC 13). It can innately cast the following spells, requiring no material components:
+    At will: dancing lights
+    1/day each: darkness, faerie fire
+- name: Innate Spellcasting
+  desc: |-
+    The drow's spellcasting ability is Charisma (spell save DC 13).
+    It has spellslots of the following levels:
+    - 1st Level: 3 Spell slots
+    - 2nd Level: 2 Spell slots
+- name: Sunlight Sensitivity
+  desc: While in sunlight, the drow has disadvantage on attack rolls, as well as on
+    Wisdom (Perception) checks that rely on sight.
+spell_list:
+- https://api.open5e.com/spells/dancing-lights/
+- https://api.open5e.com/spells/darkness/
+- https://api.open5e.com/spells/minor-illusion/
+- https://api.open5e.com/spells/faerie-fire/
+- https://api.open5e.com/spells/jump/
+- https://api.open5e.com/spells/feather-fall/
+- https://api.open5e.com/spells/misty-step/
+- https://api.open5e.com/spells/hold-person/
+- https://api.open5e.com/spells/spider-climb/
+- https://api.open5e.com/spells/mirror-image/
+img_main:
+document__slug: wotc-srd
+document__title: Systems Reference Document
+document__license_url: http://open5e.com/legal

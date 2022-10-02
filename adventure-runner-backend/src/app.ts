@@ -167,7 +167,8 @@ const resolveSpells = async (spell_list: string[]) => {
     const locally_resolveable = locally_resolveable_slugs.map(slug => spell_db[slug]);
     const remote_spell_urls = spell_list.filter(spell => !locally_resolveable_slugs.includes(spell.split("/").at(-2)));
     const remote_spells = await Promise.all(remote_spell_urls.map(spell_url => fetch(spell_url).then(res => res.json())));
-    return [...locally_resolveable, ...remote_spells];
+    const resolved_spells = [...locally_resolveable, ...remote_spells];
+    return resolved_spells;
 }
 
 const renderCreature = async (path, wide = false, showDescription = true, float = false) => {

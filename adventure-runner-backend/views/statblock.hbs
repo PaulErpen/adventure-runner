@@ -158,16 +158,6 @@
         <p>{{breaklines this.desc}}</p>
       </div>
       {{/each}}
-
-      <div class="property-block">
-        <h4>Spells</h4>
-        {{#each spells}}
-          <span class="spell-clickable" data-spell="{{jsonToString this}}">
-            {{this.name}}
-          </span>&nbsp;
-        {{/each}}
-      </div>
-
     </div>
     <div class="second-col col">
       {{#if actions}}
@@ -179,6 +169,17 @@
         <p>{{breaklines this.desc}}</p>
       </div>
       {{/each}}
+      {{/if}}
+
+      {{#if spells}}
+      <div class="property-block">
+        <h4>Spells</h4>
+        {{#each spells}}
+          <span class="spell-clickable" data-spell="{{jsonToString this}}">
+            {{this.name}}
+          </span>&nbsp;
+        {{/each}}
+      </div>
       {{/if}}
 
       {{#if reactions}}
