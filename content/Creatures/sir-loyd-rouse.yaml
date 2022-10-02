@@ -1,0 +1,50 @@
+slug: sir-loyd-rouse
+name: Sir Loyd Rouse
+size: Medium
+type: humanoid
+alignment: lawful evil
+armor_class: 13
+hit_points: 136
+hit_dice: 21d8+42
+speed:
+  walk: 30
+strength: 16
+dexterity: 11
+constitution: 23
+intelligence: 7
+wisdom: 12
+charisma: 8
+damage_vulnerabilities: ''
+damage_resistances: ''
+damage_immunities: ''
+condition_immunities: 'paralyzed'
+senses: 'Passive Perception 11 '
+languages: ''
+challenge_rating: '3'
+special_abilities:
+- name: Demonblood
+  desc: When dropping under 60 hitpoints the creature automatically transforms into a demon. This happens bit by bit and enhances the physical abilities of the creature. Once the legs transfor into their deamon form the creature gains a speed bonus of 10 ft. per movement.
+actions:
+- name: Shortsword
+  desc: 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3)
+    piercing damage.'
+  attack_bonus: 5
+  damage_dice: 1d6
+  damage_bonus: 3
+- name: Hand-Crossbow (poison darts)
+  desc: 'Range Weapon Attack: +5 to hit, reach 30/120 ft., one target. Hit: 6 (1d6 + 3)
+    piercing damage. On a hit target must make a DC 13 constitution saving throw or be paralyzed for 1 minute (10 rounds). Target can repeat the saving throw on consecutive rounds.'
+  attack_bonus: 5
+  damage_dice: 1d6
+  damage_bonus: 3
+- name: Slam (only in deamon form)
+  desc: 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10 + 3)
+    piercing damage.'
+  attack_bonus: 5
+  damage_dice: 1d10
+  damage_bonus: 3
+legendary_actions:
+- name: Prepare sweep attack (only in deamon form)
+  desc: The creature targets a 10 by 10 feet area adjacent to them. It brings up its arm ready to sweep that entire area.
+- name: Release sweep attack (only in deamon form)
+  desc: The creature sweeps its clawed appendage across the previously targeted area. This automatically deals 1d10 damage to each creature still in that area. Targets must make a DC 13 strength (athletics) check or be knocked prone.
