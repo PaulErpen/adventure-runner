@@ -9,21 +9,21 @@ hit_dice: 21d8+42
 speed:
   walk: 30
 strength: 16
-dexterity: 11
+dexterity: 10
 constitution: 23
-intelligence: 7
-wisdom: 12
+intelligence: 14
+wisdom: 10
 charisma: 8
 damage_vulnerabilities: ''
 damage_resistances: ''
 damage_immunities: ''
-condition_immunities: 'paralyzed'
-senses: 'Passive Perception 11 '
-languages: ''
+condition_immunities:
+senses: 'Passive Perception 10 '
+languages: 'Common, Infernal, Undercommon'
 challenge_rating: '3'
 special_abilities:
 - name: Demonblood
-  desc: When dropping under 60 hitpoints the creature automatically transforms into a demon. This happens bit by bit and enhances the physical abilities of the creature. Once the legs transfor into their deamon form the creature gains a speed bonus of 10 ft. per movement.
+  desc: When dropping under 60 hitpoints the creature automatically transforms into a demon. This happens bit by bit and enhances the physical abilities of the creature. Once the legs transform into their deamon form the creature gains a speed bonus of 10 ft. per movement.
 actions:
 - name: Shortsword
   desc: 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3)
