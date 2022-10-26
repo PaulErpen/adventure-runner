@@ -19,19 +19,17 @@ Work with the following descriptions:
 
 #### The Bridge:
 
-"You can see another much larger cavern open up in front of you. The cave you just entered is an underground ravine and only a small bridge leads across to the next tunnel on the other side. There are some unresponsive myconids sitting near the ravine. The air is still thick with their spores. Across the bridge there lies a beautiful and ornate red carpet. It is adorned with intricate embroidery and has obviously been made by a skilled craftsman."
+"You can see another much larger cavern open up in front of you. The cave you just entered is an underground ravine and only a small bridge leads across to the next tunnel on the other side. There are some unresponsive myconids sitting near the ravine. The air is still thick with their spores. Beneath the bridge runs a quick stream of water. As you look towards its origin you can see only blackness, but there seems to be another cave opening farther upstream where you can spot another glint of light."
 
-#### Upon further investigating the carpet:
+<img src="/MushroomCave.png" width=753 height=634 />
 
-"The carpets pattern is truly mesmerizing. Between the abstract shapes you can make out what seems to be faces. However as soon as you start to focus on them they dissolve into the pattern that surrounds them. As you keep examining the pattern you feel deeply at ease and as you look up it is as if the pattern were to continue. A deep nested pattern emcopasing the cave walls, the darkness of the ravine and even the silouettes of your allies."
+Random psychedelic encounters are hallucinations with which the spectator wants to scare away the PCs.
+These are normal creatures with only a single hitpoint. Use creatures of your choice here. Anything from hillgiants to wolves to deamons.
 
 #### The main cave:
 
-"As you make your way into the main cave you step into the largest cavern you have been in today. It is like a small church and at the end you can make out the large body of the myconid sovereign. A large mushroom that encompasses the entire other side of the cave. Its many eyes are closed as if it was sleeping. The rest of the room is decorated beautifully. There are many more rich carpets on the floor and hung upon the walls. The room also houses some ornate furniture as well as what seems to be astrology equipment. But the most curious detail is the large mirror standing right in front of the myconoids body. In comparison to the rest of the decor it is rather plain just a normal oval-shaped mirror."
+"As you make your way into the main cave you step into the largest cavern you have been in today. It is like a small church and at the end you can make out the large body of the myconid sovereign. A large mushroom that encompasses the entire side of the wall. Its many eyes are closed as if it was sleeping. The rest of the room is completely overgrown with mushrooms. There is not a single spot that isn't some sort of plant or myconid."
 
-#### When investigating the mirror:
-
-"You can see your mirror image clearly in front of you as if you were illuminated slightly. You cant however make out the cave that surrounds you. Instead it is as if staring into a stary night sky."
 
 #### When touching the mirror:
 
@@ -39,4 +37,6 @@ Work with the following descriptions:
 
 #### When investigating the astral sea:
 
-"Off in the distance you see an anomaly in the smooth, reflective plain. As you approach you can make out something hideous. It looks like a dismembered skull of sorts. Its skin is shrivelled and whiteish and it only has a single currently shut eye. The unnaturally large skull seems to sprout tentacles in all directions, which seem to penetrate the perfectly smooth surface beneath you. After a second or so the skull starts to lift from the ground, its tentacles separating from the plane beneath. And then its eyes start opening one by one. Firstly the eyes placed on the end of its tentacles and at last the eye in the middle. The glint at you with greenish, crazed look."
+"Off in the distance you see an anomaly in the smooth, reflective plain. As you approach you can make out something hideous. It looks like a dismembered skull of sorts. Its skin is shrivelled and whiteish and it only has a single currently shut eye. The unnaturally large skull seems to sprout tentacles in all directions, which seem to penetrate the perfectly smooth surface beneath you. After a second or so the skull starts to lift from the ground, its tentacles separating from the plane beneath. And then its eyes start opening one by one. Firstly the eyes placed on the end of its tentacles and at last the eye in the middle. They glint at you with greenish, crazed look."
+
+-> Encounter with spectator
