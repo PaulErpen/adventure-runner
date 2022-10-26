@@ -184,7 +184,7 @@ img {
             }
         }
 
-        h3.actions {
+        h3.underscored-heading {
             border-bottom: 1px solid #7A200D;
             color: #7A200D;
             font-size: 23px;
