@@ -24,7 +24,14 @@ Work with the following descriptions:
 <img src="/MushroomCave.png" width=753 height=634 />
 
 Random psychedelic encounters are hallucinations with which the spectator wants to scare away the PCs.
-These are normal creatures with only a single hitpoint. Use creatures of your choice here. Anything from hillgiants to wolves to deamons.
+These are normal creatures, but their hitpoints are reduced to one. Use creatures of your choice here.
+
+Examples:
+
+<!--creature:dire-wolf.json float-->
+<!--creature:hill-giant.json float wide-->
+<!--creature:ahnkeg.json float-->
+<div style="clear:both"></div>
 
 #### The main cave:
 
@@ -39,4 +46,4 @@ These are normal creatures with only a single hitpoint. Use creatures of your ch
 
 "Off in the distance you see an anomaly in the smooth, reflective plain. As you approach you can make out something hideous. It looks like a dismembered skull of sorts. Its skin is shrivelled and whiteish and it only has a single currently shut eye. The unnaturally large skull seems to sprout tentacles in all directions, which seem to penetrate the perfectly smooth surface beneath you. After a second or so the skull starts to lift from the ground, its tentacles separating from the plane beneath. And then its eyes start opening one by one. Firstly the eyes placed on the end of its tentacles and at last the eye in the middle. They glint at you with greenish, crazed look."
 
--> Encounter with spectator
+<!--creature:spectator.yaml wide-->
