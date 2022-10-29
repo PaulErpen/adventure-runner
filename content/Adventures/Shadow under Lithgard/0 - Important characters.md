@@ -23,9 +23,12 @@
 * Little mushroom guy
     * Players rescued him under Lithsträd near the Earthen gate
     * Was in the process of being eaten by Goblins
+* 🪦 Ayna Maeval, drow commander killed by the players when closing the earthen gate
 * Sir Loyd Rouse, a nobleman from Luskan working as a bounty hunter
     * seeks the shield of Sir Damian Erhall, but actually wants to find the Red Dragon Egg
-* The High Matriarch Aliné Keldris
+* Moana Keldriss, a drow princess and commander
+    * coordinates the opening of larger stable portals leading from the Abyss to the mortal realm
+* The High Matriarch Aliné Keldriss
     * the queen of the drow living in the Abyss
     * tries to create stable portals into the mortal realms in order to be able to instigate raids
 * The Architect

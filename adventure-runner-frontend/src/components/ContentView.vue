@@ -43,16 +43,14 @@ img {
 }
 
 .content-view {
-    overflow: auto;
+    display: flex;
 
     .side {
         padding: 20px;
-        float: left;
         width: 310px;
     }
 
     .content {
-        float: left;
         padding: 20px;
         width: calc(100vw - 390px);
         overflow: auto;

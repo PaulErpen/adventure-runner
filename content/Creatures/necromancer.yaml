@@ -1,0 +1,67 @@
+slug: necromancer
+name: Necromancer
+size: Medium
+type: humanoid
+subtype: any race
+group:
+alignment: any alignment
+armor_class: 13
+armor_desc: 15 with mage armor
+hit_points: 40
+hit_dice: 9d8
+speed:
+  walk: 30
+strength: 9
+dexterity: 14
+constitution: 11
+intelligence: 17
+wisdom: 12
+charisma: 1
+strength_save:
+dexterity_save:
+constitution_save:
+intelligence_save: +6
+wisdom_save: +4
+charisma_save:
+perception:
+skills:
+  Arcana: "+6"
+  History: "+4"
+damage_vulnerabilities: ''
+damage_resistances: ''
+damage_immunities: ''
+condition_immunities: ''
+senses: passive Perception 11
+languages: any four languages
+challenge_rating: '6'
+actions:
+- name: Dagger
+  desc: 'Melee or Ranged Weapon Attack: +5 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d4 + 2) piercing damage.'
+  attack_bonus: 5
+  damage_dice: 1d4
+reactions: ''
+legendary_desc: ''
+legendary_actions: ''
+special_abilities:
+- name: Spellcasting
+  desc: |-
+    The necromancer is a 9th-level spellcaster. Their spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks). The necromancer has the following spells prepared:
+
+    • Cantrips (at will): chill touch
+    • 1st level (4 slots): inflict wounds, mage armor
+    • 2nd level (3 slots): misty step
+    • 3rd level (3 slots): animate dead
+    • 4th level (3 slots): blight
+    • 5th level (1 slots): raise dead
+spell_list:
+- https://api.open5e.com/spells/chill-touch/
+- https://api.open5e.com/spells/inflict-wounds/
+- https://api.open5e.com/spells/mage-armor/
+- https://api.open5e.com/spells/misty-step/
+- https://api.open5e.com/spells/animate-dead/
+- https://api.open5e.com/spells/blight/
+- https://api.open5e.com/spells/raise-dead/
+img_main:
+document__slug: wotc-srd
+document__title: Systems Reference Document
+document__license_url: http://open5e.com/legal
