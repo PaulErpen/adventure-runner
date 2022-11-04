@@ -3,7 +3,7 @@ name: Sir Loyd Rouse
 size: Medium
 type: humanoid
 alignment: lawful evil
-armor_class: 13
+armor_class: 12
 hit_points: 136
 hit_dice: 21d8+42
 speed:
@@ -43,8 +43,11 @@ actions:
   attack_bonus: 5
   damage_dice: 1d10
   damage_bonus: 3
+legendary_desc: Can take 3 legendary actions. Only one legendary action can be used at a time, and only at the end of another creature's turn. Spent legendary actions are regained at the start of each turn.
 legendary_actions:
 - name: Prepare sweep attack (only in deamon form)
   desc: The creature targets a 10 by 10 feet area adjacent to them. It brings up its arm ready to sweep that entire area.
 - name: Release sweep attack (only in deamon form)
   desc: The creature sweeps its clawed appendage across the previously targeted area. This automatically deals 1d10 damage to each creature still in that area. Targets must make a DC 13 strength (athletics) check or be knocked prone.
+- name: Bloodspill (costs 2 actions - only in deamon form)
+  desc: The creature targets a 15ft square adjacent to it. Toxic demon blood spills out of one of its malformed appendages covering the area. Creatures in that area take 3d4 poison damage (Half damage if successful on DC 13 dexterity (acrobatics)). Creatures that end their turn in the area also take the damage (saving throw still applies). Effect lasts for 1 hour.

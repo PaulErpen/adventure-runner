@@ -10,6 +10,11 @@ Both the ravens and the undead won't try to kill the players, but they will try 
 
 If the situation gets critical Mother Elise and Anais will show up and  resolve the conflict.
 
+Mother Elises goal is to gather more corpses to feed her ravens and to have more bodies to experiment on.
+She has moral quandaries about simply killing people to gain those corpses, but she won't mind making a deal with the adventurers.
+If the players agree she gives them a bone flute, they should use every time they happen to come across some corpses.
+As a reward she promises them a favor.
+
 <img src="Digsite.png" width=600>
 <div style="clear:both"></div>
 

@@ -164,15 +164,6 @@ img {
         .property-block {
             padding: 10px 2px 0;
 
-            h4,
-            p,
-            .spell-clickable {
-                font-size: 13.5px;
-                line-height: 1.2em;
-                display: inline;
-                margin: 0;
-            }
-
             h4 {
                 font-style: italic;
             }
@@ -180,6 +171,15 @@ img {
             .spell-clickable {
                 text-decoration: underline;
             }
+        }
+
+        h4,
+        p,
+        .spell-clickable {
+            font-size: 13.5px;
+            line-height: 1.2em;
+            display: inline;
+            margin: 0;
         }
 
         h3.underscored-heading {
