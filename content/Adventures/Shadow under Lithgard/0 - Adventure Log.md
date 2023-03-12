@@ -40,3 +40,29 @@ Loot:
 * A fist sized piece of golden amber from the shield generator at the kobold camp
 
 Party is level 2 now!
+
+## Session 4
+
+* Mushroom cave
+* party fought spectator and defeated them
+* got fungal companion that enables access to the shared dream
+
+## Session 5
+
+* battle with Sir Loyde Rouse
+* defeat him in his deamon form, one thug gets away
+* Elandria imprisons the remains of sir loyde rouse
+
+Party is level 3 now!
+
+## Session 6
+
+* Flabber Kudder went to Olsbeck into the "Black Raven" and then talked to Charlie the fisherman who survived a shipwreck induced by a basilisk
+* Erin spied on Gilreth and Andre at the digsite
+* Großpyntel made friends with the Verlessians
+* They met Mother Alice near the digsite 
+* Party had to fight a Banshee in front of Betrands tower
+* The party went to "Anu Nadar" with the Portal Mirror in Bertrams towers basement
+* They found Bertrand who had lost the keys to the "Golden Comet"
+* They got the keys to the "Golden Comet" from Shiraz in the basement of the Pyramid
+* They unlocked the basement in Betrand's tower and got access to the "Golden Comet"

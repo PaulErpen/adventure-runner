@@ -23,7 +23,7 @@
 * Little mushroom guy
     * Players rescued him under Lithsträd near the Earthen gate
     * Was in the process of being eaten by Goblins
-* 🪦 Ayna Maeval, drow commander killed by the players when closing the earthen gate
+* Ayna Maeval, drow commander taken hostage by the players when closing the earthen gate
 * Sir Loyd Rouse, a nobleman from Luskan working as a bounty hunter
     * seeks the shield of Sir Damian Erhall, but actually wants to find the Red Dragon Egg
 * Moana Keldriss, a drow princess and commander
@@ -35,3 +35,12 @@
     * an ancient eldritch being trapped in the abyss
     * has the power to harness the power that is held within the core of the world
     * harnessing this power would destroy the world in the process
+* High Archmage Bertrand Erandall,
+* Gilreth :) 
+* Charlie, Fisherman in Olsbeck
+* Francis
+* Carlton the door
+* Elvina the banshee 
+* Collectors
+* Shiraz the Demon Girl
+* 
